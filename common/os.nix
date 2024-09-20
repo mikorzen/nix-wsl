@@ -9,6 +9,7 @@
   wsl = {
     enable = true;
     defaultUser = "mikorzen";
+    docker-desktop.enable = true;
   };
 
   users.users."mikorzen" = {
