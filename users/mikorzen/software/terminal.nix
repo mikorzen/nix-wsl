@@ -1,7 +1,8 @@
 {
   imports = [
-    ./terminal/fish.nix       # fish shell
-    ./terminal/utilities.nix  # utilities
+    ./terminal/commands.nix
+    ./terminal/fish.nix      # fish shell
+
   ];
 
   programs = {
