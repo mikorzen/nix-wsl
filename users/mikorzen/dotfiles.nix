@@ -1,6 +1,6 @@
 {
   home.file.".nix" = {
-    target = "fake/..";  # Wourkaround to target the home directory itself
+    target = "fake/..";  # workaround to target the home directory itself
     source = ./dotfiles;
     recursive = true;
   };
