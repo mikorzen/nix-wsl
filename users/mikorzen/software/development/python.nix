@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    python3
-    python312Packages.pip
+    python313
     uv
   ];
 
@@ -9,12 +8,6 @@
     enable = true;
     settings = {
       fix = true;
-      format = {
-        docstring-code-format = true;
-      };
-      lint = {
-        select = [ "ALL" ];
-      };
     };
   };
 }

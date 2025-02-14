@@ -1,4 +1,4 @@
-{  # host-agnostic home-manager configuration
+{
   imports = [
     ./mikorzen/dotfiles.nix
     ./mikorzen/software.nix

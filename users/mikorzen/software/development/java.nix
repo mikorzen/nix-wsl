@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   programs.java = {
     enable = true;
-    package = pkgs.temurin-bin;
+    package = pkgs.temurin-bin-23;
   };
 }

@@ -1,10 +1,13 @@
-{ inputs, ... }: {
-  "Acerussy" = inputs.nixpkgs.lib.nixosSystem {
+{ inputs, system, ... }: let
+  defaults = {
+    inherit system;
     specialArgs = { inherit inputs; };
-    system = "x86_64-linux";
-    modules = [
-      ../hosts/default.nix
-      ../hosts/Acerussy.nix
-    ];
+    modules = [ ../hosts/default.nix ];
   };
+  mkOsConfig = hostModule: inputs.nixpkgs.lib.nixosSystem (
+    defaults // { modules = defaults.modules ++ hostModule; }
+  );
+in {
+  "Acerussy" = mkOsConfig [ ../hosts/Acerussy.nix ];
+  "Computerussy" = mkOsConfig [ ../hosts/Computerussy.nix ];
 }

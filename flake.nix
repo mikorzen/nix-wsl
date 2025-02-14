@@ -9,7 +9,9 @@
     };
   };
 
-  outputs = inputs: {
+  outputs = inputs: let
+    system = "x86_64-linux";
+  in {
     nixosConfigurations = import ./flake/os.nix { inherit inputs; };
     homeConfigurations  = import ./flake/home.nix { inherit inputs; };
   };
