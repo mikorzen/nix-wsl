@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     # python
     python313
@@ -35,5 +35,5 @@
         fix = true;
       };
     };
-  }
+  };
 }
