@@ -14,6 +14,9 @@
       enable = true;
       userName = "mikorzen";
       userEmail = "michal.korzen-tech@pm.me";
+      extraConfig = {
+        init.defaultBranch = "main";
+      };
     };
 
     # java
