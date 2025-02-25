@@ -1,6 +1,16 @@
-#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+version = 3
 
-version = 2
+[palette]
+  yellow_gold = '#FFB900'
+  red = '#E06C75'
+
+[transient_prompt]
+  template = '# '
+  foreground_templates = [
+    '{{ if eq .Code 0 }}p:yellow_gold{{ end }}',
+    '{{ if gt .Code 0 }}p:red{{ end }}'
+  ]
 
 [[blocks]]
   type = 'prompt'
@@ -26,14 +36,13 @@ version = 2
   [[blocks.segments]]
     type = 'git'
     style = 'plain'
-    powerline_symbol = ''
     foreground = '#14A5AE'
-    template = '{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} '
+    template = '{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}'
+    powerline_symbol = ''
 
     [blocks.segments.properties]
       fetch_stash_count = true
       fetch_upstream_icon = true
-
 
 [[blocks]]
   type = 'rprompt'
@@ -56,7 +65,6 @@ version = 2
     foreground = '#F3C267'
     template = '  {{ .CurrentDate | date .Format }}'
 
-
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
@@ -71,21 +79,8 @@ version = 2
   [[blocks.segments]]
     type = 'text'
     style = 'plain'
+    template = '# '
     foreground_templates = [
       '{{ if eq .Code 0 }}p:yellow_gold{{ end }}',
       '{{ if gt .Code 0 }}p:red{{ end }}'
     ]
-    template = '# '
-
-
-[transient_prompt]
-  foreground_templates = [
-    '{{ if eq .Code 0 }}p:yellow_gold{{ end }}',
-    '{{ if gt .Code 0 }}p:red{{ end }}'
-  ]
-  template = '# '
-
-
-[palette]
-yellow_gold = '#FFB900'
-red = '#E06C75'
