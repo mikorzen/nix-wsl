@@ -24,6 +24,7 @@
         fish.enable = true;    # shell
         git.enable = true;     # version control (that's crazy)
         nh.enable = true;      # nix helper
+        nix-ld.enable = true;  # https://nix.dev/guides/faq#how-to-run-non-nix-executables
     };
 
     time.timeZone = "Europe/Warsaw";
