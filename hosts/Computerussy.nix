@@ -1,4 +1,5 @@
 {
-  wsl.wslConf.network.hostname = "Computerussy";
-  system.stateVersion = "24.05";
+    wsl.wslConf.network.hostname = "Computerussy";
+
+    system.stateVersion = "25.11";
 }

@@ -1,19 +1,20 @@
 {
-  imports = [
-    ./mikorzen/dotfiles.nix
-    ./mikorzen/software.nix
-  ];
+    imports = [
+        ./mikorzen/dotfiles.nix
+        ./mikorzen/software.nix
+    ];
 
-  programs.home-manager.enable = true;
+    programs.home-manager.enable = true;
 
-  home = rec {
-    username = "mikorzen";
-    homeDirectory = "/home/${username}";
+    home = rec {
+        username = "mikorzen";
+        homeDirectory = "/home/${username}";
 
-    sessionVariables = {
-      FLAKE = "${homeDirectory}/.nix";
+        shell.enableShellIntegration = false;
+        sessionVariables = {
+            NH_FLAKE = "${homeDirectory}/.nix";
+        };
+
+        stateVersion = "25.11";
     };
-
-    stateVersion = "24.05";
-  };
 }
