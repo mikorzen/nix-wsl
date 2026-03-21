@@ -15,5 +15,7 @@
             enable = true;
             nix-direnv.enable = true;
         };
+
+        codex.enable = true;
     };
 }

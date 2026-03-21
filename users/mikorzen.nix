@@ -1,6 +1,7 @@
 {
     imports = [
         ./mikorzen/dotfiles.nix
+        ./mikorzen/env.nix
         ./mikorzen/software.nix
     ];
 
