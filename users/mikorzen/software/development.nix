@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, config, ... }: {
     programs = {
         git = {
             enable = true;
@@ -15,11 +15,16 @@
             enable = true;
             nix-direnv.enable = true;
         };
-
-        codex.enable = true;
     };
 
+    programs.codex.enable = true;
     home.packages = with pkgs; [
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.codex-acp  # https://github.com/numtide/llm-agents.nix/blob/main/packages/codex-acp/README.md
+    ];
+
+    programs.bun.enable = true;
+    home.sessionPath = [
+        "${config.home.homeDirectory}/.local/bin"
+        "${config.home.homeDirectory}/.bun/bin"
     ];
 }
