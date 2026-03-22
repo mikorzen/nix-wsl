@@ -3,7 +3,7 @@
 ## Setup
 
 ```bash
-git clone https://github.com/mikorzen/nix.git
+git clone https://github.com/mikorzen/nix-wsl.git
 ```
 
 ```bash
