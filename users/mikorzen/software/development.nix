@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
     programs = {
         git = {
             enable = true;
@@ -18,4 +18,8 @@
 
         codex.enable = true;
     };
+
+    home.packages = with pkgs; [
+        codex-acp
+    ];
 }
