@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
     programs = {
         git = {
             enable = true;
@@ -20,6 +20,6 @@
     };
 
     home.packages = with pkgs; [
-        codex-acp
+        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.codex-acp  # https://github.com/numtide/llm-agents.nix/blob/main/packages/codex-acp/README.md
     ];
 }
