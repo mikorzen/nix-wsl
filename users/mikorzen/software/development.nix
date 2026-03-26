@@ -26,6 +26,7 @@
 
     home = {
         packages = with pkgs; [
+            nixd  # needed for working nix language server in Zed + WSL
             inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.codex-acp  # https://github.com/numtide/llm-agents.nix/blob/main/packages/codex-acp/README.md
             python315
         ];
