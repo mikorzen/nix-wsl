@@ -16,8 +16,12 @@
             nix-direnv.enable = true;
         };
 
-        codex.enable = true;
         bun.enable = true;
+        opencode = {
+            enable = true;
+            web.enable = true;
+        }
+        codex.enable = true;
     };
 
     home = {
