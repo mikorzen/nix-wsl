@@ -20,7 +20,7 @@
         opencode = {
             enable = true;
             web.enable = true;
-        }
+        };
         codex.enable = true;
     };
 
