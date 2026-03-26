@@ -6,6 +6,12 @@
     wsl = {
         enable = true;
         defaultUser = "mikorzen";
+        extraBin =  # workaround for Zed's language servers failing to upload to WSL (https://www.github.com/zed-industries/zed/issues/52150#issuecomment-4137482439)
+            let
+                coreutilsBins = builtins.attrNames (builtins.readDir "${pkgs.coreutils-full}/bin");
+                mkExtraBin = name: { src = "${pkgs.coreutils-full}/bin/${name}"; };
+            in
+                map mkExtraBin coreutilsBins;
     };
 
     users.users."mikorzen" = {
