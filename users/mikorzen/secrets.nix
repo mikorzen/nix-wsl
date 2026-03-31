@@ -15,10 +15,12 @@
 
         secrets = {
             openrouter_api_key = {};
+            opencode_api_key = {};
         };
 
         templates."session-secrets.fish".content = ''
             set -gx OPENROUTER_API_KEY "${config.sops.placeholder.openrouter_api_key}"
+            set -gx OPENCODE_API_KEY "${config.sops.placeholder.opencode_api_key}"
         '';
     };
 
